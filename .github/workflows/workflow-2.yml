@@ -1,0 +1,34 @@
+name: second workflow to run multiple commands in single step
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: run multiple commands 
+      run: |
+       mkdir mydemo
+       cd mydemo
+       touch file1
+       ls -al
+       echo "File created successfully" 
+  job2:
+    runs-on: ubuntu-latest 
+    steps:
+    - name: Install python
+      run: |
+       sudo apt update
+       sudo apt install python3 -y
+       python3 --version
+
+
+    
+
+
+
+
+
+
+
+
+
+      
